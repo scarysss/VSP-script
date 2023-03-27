@@ -32,7 +32,7 @@ MSection:NewTextBox("Teleport to", "Teleport you to chosen player", function(T)
         end
     else
         player.Character.HumanoidRootPart.CFrame = game:GetService("Players")[T].Character.HumanoidRootPart.CFrame
-    end)
+    end
 end)
 
 
