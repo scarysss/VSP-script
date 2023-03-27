@@ -3,7 +3,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Roboj
 --Variables
 local player = game:GetService("Players").LocalPlayer
 --Window
-local Window = Library:CreateWindow("VSP Universal Script", "RJTheme1")
+local Window = Library.CreateLib("VSP Universal Script", "RJTheme1")
 --Tabs
 local Universal = Window:NewTab("Universal")
 --Sections
