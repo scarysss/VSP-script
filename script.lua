@@ -2,6 +2,7 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
 --Variables
 local player = game:GetService("Players").LocalPlayer
+local autotp = false
 --Window
 local Window = Library.CreateLib("VSP Universal Script", "RJTheme1")
 --Tabs
@@ -16,8 +17,22 @@ MSection:NewSlider("Jump Power", "Slide to change player jump power", 500, 0, fu
     player.Character.Humanoid.UseJumpPower = true
     player.Character.Humanoid.JumpPower = JP
 end)
+MSection:NewToggle("Loop Teleport", "Teleport you to chosen player everytime", function(LT)
+    if LT then
+        autotp = true
+    else
+        autotp = false
+    end
+end)
 MSection:NewTextBox("Teleport to", "Teleport you to chosen player", function(T)
-    player.Character.HumanoidRootPart.CFrame = game:GetService("Players")[T].Character.HumanoidRootPart.CFrame
+    if autotp == true then
+        while autotp == true do
+            player.Character.HumanoidRootPart.CFrame = game:GetService("Players")[T].Character.HumanoidRootPart.CFrame
+            wait(0)
+        end
+    else
+        player.Character.HumanoidRootPart.CFrame = game:GetService("Players")[T].Character.HumanoidRootPart.CFrame
+    end
 end)
 
 
