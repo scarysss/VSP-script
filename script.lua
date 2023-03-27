@@ -40,7 +40,6 @@ end)
 ASection:NewToggle("Spin", "When enabled your player will spin", function(S)
     if S then
         autospin = true
-        if autospin == true do
             while autospin == true do
                 player.HumanoidRootPart.CFrame *= CFrame.Angles(0, math.rad(50), 0)
                 game:GetService("RunService").RenderStepped:wait(0)
