@@ -9,6 +9,7 @@ local Window = Library.CreateLib("VSP Universal Script", "RJTheme1")
 local Universal = Window:NewTab("Universal")
 --Sections
 local MSection = Universal:NewSection("Movement")
+local ASection = Universal:NewSection("Action")
 --Scripts Movement Section
 MSection:NewSlider("Walk Speed", "Slide to change player speed", 500, 0, function(WS)
     player.Character.Humanoid.WalkSpeed = WS
@@ -34,5 +35,13 @@ MSection:NewTextBox("Teleport to", "Teleport you to chosen player", function(T)
         player.Character.HumanoidRootPart.CFrame = game:GetService("Players")[T].Character.HumanoidRootPart.CFrame
     end
 end)
-
+--Scripts Action Section
+ASection:NewToggle("Spin", "When enabled your player will spin", function(S)
+    if S then
+        while true do
+            player.HumanoidRootPart.CFrame *= CFrame.Angles(0, math.rad(50), 0)
+            game:GetService("RunService").RenderStepped:wait(0)
+        end
+    end
+end)
 
