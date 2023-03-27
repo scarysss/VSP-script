@@ -3,6 +3,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Roboj
 --Variables
 local player = game:GetService("Players").LocalPlayer
 local autotp = false
+local autospin = false
 --Window
 local Window = Library.CreateLib("VSP Universal Script", "RJTheme1")
 --Tabs
@@ -38,10 +39,13 @@ end)
 --Scripts Action Section
 ASection:NewToggle("Spin", "When enabled your player will spin", function(S)
     if S then
-        while true do
+        autospin = true
+        while autospin == true do
             player.HumanoidRootPart.CFrame *= CFrame.Angles(0, math.rad(50), 0)
             game:GetService("RunService").RenderStepped:wait(0)
         end
+    else
+        autospin = false
     end
 end)
 
