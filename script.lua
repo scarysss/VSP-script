@@ -17,7 +17,7 @@ MSection:NewSlider("Jump Power", "Slide to change player jump power", 500, 0, fu
     player.Character.Humanoid.JumpPower = JP
 end)
 MSection:NewTextBox("Teleport to", "Teleport you to chosen player", function(T)
-    player.Character.HumanoidRootPart.CFrame = game:GetServcie("Player")[T].Character.HumanoidRootPart.CFrame
+    player.Character.HumanoidRootPart.CFrame = game:GetServcie("Players")[T].Character.HumanoidRootPart.CFrame
 end)
 
 
