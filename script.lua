@@ -28,6 +28,7 @@ MSection:NewTextBox("Teleport to", "Teleport you to chosen player", function(T)
     if teleportloop == true then
         while teleportloop == true do
             player.Character.HumanoidRootPart.CFrame = game:GetService("Players")[T].Character.HumanoidRootPart.CFrame
+            wait(0)
         end
     else
         player.Character.HumanoidRootPart.CFrame = game:GetService("Players")[T].Character.HumanoidRootPart.CFrame
