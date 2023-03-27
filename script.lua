@@ -10,7 +10,7 @@ local Universal = Window:NewTab("Universal")
 local MSection = Universal:NewSection("Movement")
 --Scripts Movement Section
 MSection:NewSlider("Walk Speed", "Slide to change player speed", 500, 0, function(WS)
-    player.Character:FindFirstChild("Humanoid").WalkSpeed = WS
+    player.Character.Humanoid.WalkSpeed = WS
 end)
 MSection:NewSlider("Jump Power", "Slide to change player jump power", 500, 0, function(JP)
     player.Character:FindFirstChild("Humanoid").UseJumpPower = true
