@@ -2,7 +2,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
 --Variables
 local player = game:GetService("Players").LocalPlayer
-local teleportloop = false
 --Window
 local Window = Library.CreateLib("VSP Universal Script", "RJTheme1")
 --Tabs
