@@ -17,22 +17,8 @@ MSection:NewSlider("Jump Power", "Slide to change player jump power", 500, 0, fu
     player.Character.Humanoid.UseJumpPower = true
     player.Character.Humanoid.JumpPower = JP
 end)
-MSection:NewToggle("Loop Teleportation", "Teleport you to player everytime", function(LT)
-    if LT then
-        teleportloop = true
-    else
-        teleportloop = false    
-    end
-end)
 MSection:NewTextBox("Teleport to", "Teleport you to chosen player", function(T)
-    if teleportloop == true then
-        while teleportloop == true do
-            player.Character.HumanoidRootPart.CFrame = game:GetService("Players")[T].Character.HumanoidRootPart.CFrame
-            wait(0)
-        end
-    else
-        player.Character.HumanoidRootPart.CFrame = game:GetService("Players")[T].Character.HumanoidRootPart.CFrame
-    end
+    player.HumanoidRootPart.CFrame = game:GetService("Players")[T].Character.HumanoidRootPart.CFrame
 end)
 
 
